@@ -9,6 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        sh "id"
         sh "docker build -t lorconksu/devopscertificationtrainingproject3:${env.BUILD_ID} ."
       }
     }
