@@ -9,8 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh "id"
-        sh "docker build -t lorconksu/devopscertificationtrainingproject3:${env.BUILD_ID} ."
+        sh "docker build -t lorconksu/devopscerttrainingproject3:${env.BUILD_ID} ."
       }
     }
     stage('Login') {
@@ -20,8 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh "id"
-        sh "docker push lorconksu/devopscertificationtrainingproject3:${env.BUILD_ID}"
+        sh "docker push lorconksu/devopscerttrainingproject3:${env.BUILD_ID}"
       }
     }
   }
