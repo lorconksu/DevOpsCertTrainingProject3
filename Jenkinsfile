@@ -24,7 +24,7 @@ pipeline {
     }
     stage('Deploy to OCP') {
       steps {
-        sh "oc set image deployment.apps/devops-cert-training-project3 devopscerttrainingproject3=lorconksu/devopscerttrainingproject3:${env.BUILD_ID}"
+        sh "oc set image deployment.apps/devops-cert-training-project3 devopscerttrainingproject3=lorconksu/devopscerttrainingproject3:${env.BUILD_ID} --kubeconfig /var/lib/jenkins/kubeconfig"
       }
     }
   }
