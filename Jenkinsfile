@@ -22,6 +22,10 @@ pipeline {
         sh "docker push lorconksu/devopscerttrainingproject3:${env.BUILD_ID}"
       }
     }
+    stage('Deploy to OCP')
+      steps {
+        sh "oc set image deployment.apps/devops-cert-training-project3 devopscerttrainingproject3=lorconksu/devopscerttrainingproject3:${env.BUILD_ID}"
+      }
   }
   post {
     always {
